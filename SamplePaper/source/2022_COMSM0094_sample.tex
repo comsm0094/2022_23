@@ -1,0 +1,288 @@
+
+\documentclass{cs-uob-exam}
+
+%MSM: uncomment to print the solutions...
+\printanswers 
+% remember to deal with figure as well
+
+%MSM: Unit specific commands for the Rubric
+\newcommand{\Coms}{COMSM0094}
+\newcommand{\Name}{Learning, Computation and the Brain}
+\newcommand{\Degrees}{Master of Engineering / Masters of Science}
+\newcommand{\Year}{M Level}
+\newcommand{\When}{SAMPLE PAPER}
+\newcommand{\Time}{2 hours}
+%\chead{{\bf\large 3287}}
+\iftrue 
+
+\newcommand{\Rubrik}{
+This paper contains \emph{two} parts. \\
+The first section contains \emph {15} short questions.\\ 
+Each question is worth \emph{two marks} and all should be attempted.\\
+The second section contains \emph {three} long questions.\\
+Each long question is worth \emph{20 marks}.\\
+The best \emph{two} long question answers will be used for assessment. \\
+The maximum for this paper is \emph{70 marks}.
+}
+
+
+%MSM: The standard sentence for calculators, you can add instructions as desired.
+\newcommand{\Instruct}{
+You may use a single two-sided A4 sheet of notes for this exam, you can use a calculator. Calculators must have the faculty seal of approval.\\
+\textbf{Do not turn over until told to start}
+}
+\newcommand{\ILO}{
+}
+
+
+
+%MSM: unit specific Latex commands 
+\usepackage{amsmath,amsfonts,amssymb}   
+
+\let\imp=\Rightarrow
+\let\iff=\Leftrightarrow
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{tikz-qtree}
+\lstset{language=C}
+
+
+\tikzset{every tree node/.style={minimum width=2em,draw,circle},
+         blank/.style={draw=none},
+         edge from parent/.style=
+         {draw,->, edge from parent path={(\tikzparentnode) -- (\tikzchildnode)}},
+         level distance=1.5cm}
+
+\begin{document}
+\maketitle
+        
+%MSM: leave this in without modification
+%\setlength{\numquestions}{5}
+%\include{cs-uob-rubric}
+
+%MSM: here the actual exam begins
+
+\section*{Section A: short questions - answer all questions}
+
+\begin{questions} 
+
+
+%c1
+\question Hebb's rule is often paraphrased as \lq{}neurons that fire together wire together\rq{}; why is this no longer considered accurate?
+\begin{solution}
+It ignores the temporal structure; spike timing effects are now considered important.
+\end{solution}
+  
+
+%c2
+\item The two principal forms of aphasia are expressive aphasia and
+  fluent aphasia, one is distinguished by the inability to find words,
+  the other by the inability to understand language. Expressive aphasia is 
+  associated with lesions in which brain areas.
+\begin{solution}
+Broca's area 
+\end{solution}
+
+%c3
+
+\item In the Hodgkin-Huxley model of the squid giant axon, which ion
+  is responsible for the initial rise in the voltage during a spike?
+\begin{solution}
+Sodium
+\end{solution}
+
+%c4
+\question What are the advantages and disadvantages of \textsl{in vivo} electrode recordings as a tool to study neuroscience.
+\begin{solution}
+Records spikes so it gives detailed information about neuron
+behaviour, however, invasive, only gives the activity of specific
+neurons and spike sorting and other data processing steps can be
+challenging.
+\end{solution}
+
+%c5
+\question Draw the typical f-I curve for a leaky integrate-and-fire neuron model.
+\begin{solution}
+Plot with frequency (f) on y-axis and input current (i) on x-axis. Curve should be zero for small positive values of i, then above some threshold the firing rate begins to rise monotonically, without a discontinuity from zero firing rate. [2 marks, 1 for reasonable attempt.]
+\end{solution}
+
+%c6
+
+\question Solve the equation
+$$3\frac{dv}{dt}=-v$$
+with $v(0)=1$.
+
+\begin{solution}
+Solved by ansatz or integrating factor this give $v=\exp{(-t/3)}$.
+\end{solution}
+
+
+%ch7
+\question Define Shannon's capacity $C(B,S)$. 
+\begin{solution}
+  $C = B \log_2 (1+S/N)$ where $B$=bandwidth, $S$=signal, $N$=noise
+\end{solution}
+
+%ch8
+\question What was Dennards scaling law?
+\begin{solution}
+As the dimensions of a device go down, so does power consumption.
+or
+As transistors get smaller, their power stays constant hence power use stays in proportion with area.
+or
+something close that says the same thing.
+\end{solution}
+
+%ch9
+\question Approximately how many neurons are in the human brain?
+\begin{solution}
+$10^{10}$ accept a single of order of magnitude up or  down.
+\end{solution}
+
+
+%s10
+\question Draw the experimental stimuli and timing of the Wisconsin General Test Apparatus task used by Fuster and colleagues that is used to probe working memory.
+\begin{solution}
+  a. Solution: 2 food wells, distractor wall during delay, wall removed to allow response.
+\end{solution}
+
+%s11
+\question
+Draw the bifurcation diagram for the simple recurrent model that was studied in this unit.
+\begin{solution}
+$J_{EE}$ on x-axis, steady-state firing rate on y-axis. Emergence of upper stable steady state above threshold, emergence of unstable steady state above threshold.
+  \end{solution}     
+%s12
+\question
+If the fraction of open channels due to AMPA receptors, s$\_$AMPA = 0.5 at the current time, calculate s$\_$AMPA 0.1ms later when there is one presynaptic spike, with tau$\_$AMPA = 2ms, $dt$ = 0.1ms and s$\_$AMPA = 0.5. using the Euler method.
+\begin{solution}
+calculate ds/dt = -0.5/2ms + 1, s$\_$AMPA(t+0.1) = 0.5+ 0.1*(-0.5/2 + 1)
+\end{solution}
+
+%s13
+\question What is meant by `activity-silent working memory'?
+\begin{solution}
+Successful performance of short-term or working memory tasks with an absence of detectable neural activity, or neural activity that decays during the delay period.
+\end{solution}
+
+%s14
+\question How can an `activity-silent' memory trace be detected? What is the logic behind this method?
+\begin{solution}
+An an ‘activity-silent’ memory trace can be detected by ‘pinging’ the brain with a neutral stimulus (such as a noisy visual stimulus or a TMS pulse) [2 points]. As the memory is thought to be stored in temporary facilitation of the previously activated synapses, a neutral stimulus should preferentially reactivate the original pattern. [2 points]
+\end{solution}
+
+%s15
+\question What time constants are typically used for synaptic facilitation and depression in models of activity-silent working memory?
+
+\begin{solution}
+Facilitation 1.5s (1-2s ok) [2 points]; Depression 200ms (150-300ms ok). [2 points]
+\end{solution}
+
+\end{questions}
+  
+\section*{Section B: long questions - answer two questions}
+
+\begin{questions}
+
+\question This question is about integrate-and-fire neurons.
+\begin{parts}
+\part[5] In the leaky integrate-and-fire neuron the voltage, $v$, satisfies
+$$
+\tau_m\frac{dv}{dt}=E_l-v+R_mI_e
+$$
+with the rule that if $v>V_t$ the voltage is reset to $V_r$. What is the term $E_l$ and where does it come from? \droppoints
+\part[5] In an experiment a constant current input $I_e$ is applied with successively larger values. What value of $I_e$ will make the neuron spike? \droppoints
+\part[3] Draw the f-I curve for the integrate and fire neuron.\droppoints
+\part[7] Derive a formula for the interspike interval for this neuron when there is a constant current large enough to cause spiking. \droppoints
+\end{parts}
+
+\begin{solution}
+a) $E_l$ is the reversal potential [2 mark] and is the result of
+chemical gradients, largely in potassium, across the cell membrane [3
+  marks]\\ b) The neuron will spike if $I_e>(V_t-E_l)/R_m$
+since then the equilibrium point is higher than threshold [5 marks, 2
+  for some attempt].\\c) This is a curve that is zero until $I_e$ causes the equilibium value to reach threshold, then it rises sharply. [3 for nice graph, 1 for graph missing labels or with the wrong $I_e$ value]\\
+d) In the model 
+$$
+\tau_m\frac{dV}{dt}=E_L-V+R_mI_e
+$$
+which we can solve from our study of odes, it gives
+$$
+V(t)=E_L+R_mI_e+[V(0)-E_L-R_mI_e]e^{-t/\tau_m}
+$$
+[2 marks]
+so if the neuron has spiked and is reset at time $t=0$ and reaches
+threshold at time $t=T$, assume $V_R=E_L$ we have [1 marks]
+$$
+V_T=E_L+R_mI_e-R_mI_ee^{-T/\tau_m}
+$$
+[1 mark] so 
+$$
+e^{-T/\tau_m}=\frac{E_L+R_mI_e-V_T}{R_mI_e}
+$$
+[1 mark] Taking the log of both sides we get
+$$
+T=\tau_m\log\left[\frac{R_mI_e}{E_L+R_mI_e-V_T}\right]
+$$
+[2 marks]
+\end{solution}
+
+%charlie
+\question This question is about Shannon's capacity theorem and its application to the energy efficiency of communication.
+\begin{parts}
+\part[4] Define Shannon's capacity $C(B,S)$.\droppoints
+\part[5] Calculate the channel capacity for two cases $S=3N$ and $S=15N$.\droppoints
+\part[3] Given the energy efficiency is $F = C/(S+N)$, where $S$ is defined in terms of a constant times $N$, Compare the energy efficiency of the two cases from the previous part of the question, given $B=1/2$. What can you say about the difference between the two cases?\droppoints
+\part[3]Explain, with reference to Shannon's capacity theorem, why the channel capacity cannot become unboundedly large even as we increase the bandwidth without bound?\droppoints
+\part[5] How can we show that the channel capacity has a bound? You do not have to calculate the limit.\droppoints
+\end{parts}
+
+\begin{solution}
+a)
+C = B log2 (1+S/N) where B=bandwidth, S=signal, N=noise\\
+b)\\
+C = B log2 (1+3N/N) = 2B and C = B log2 (1+255N/N) = 4B
+c)\\
+For S=3N, F=1/4N and for S=15N, F=2/16N=1/8N hence for two times the capacity the energy has increased 4 times so ignoring external influences it would seem that two cases of S=3N would be more efficient than one case of S=15N\\
+d)\\
+The channel capacity does not become infinite since, with an increase in bandwidth, the noise power also increases.\\
+e)\\
+Say N=nB then C = S/n(nB/S)log2 (1 + S/nB) and in the limit pow((1 + S/nB),(nB/S)) becomes a constant hence in the limit C = someconstant (S/n).
+\end{solution}
+
+
+%s
+\question This is about large-scale models of the cortex.
+\begin{parts}
+\part[2] Explain why is it valuable to build large-scale cortical models of cognitive functions?\droppoints
+
+\part[3] List and describe three major steps in building a modern large-scale model of the cortex.\droppoints
+
+\part[2] What is a dendritic spine?\droppoints
+
+\part[3] In this equation
+$$
+\tau\frac{dr_{x,E}}{dt}=-r_{x,E}+\beta_E\left[w_{E,E}r_{x,E}+G\sum{y\in Y}C_{y\rightarrow x}r_{y,E}-w_{E,I}r_{x,I}\right]_+
+$$
+How can the spine count of area $x$ be implemented?\droppoints
+
+\part[3] What are the potential dynamical consequences of a gradient of spines, and what may be the functional implications of this?\droppoints
+
+\part[4] In some of the large-scale models we studied, some brain areas showed persistent activity, while others did not. Why? Illustrate your answer.\droppoints
+
+\part[3] In the lectures we focused on a working memory attractor state in the large-scale models. What other attractor states could exist in the brain? If so, how could the real brain shift between attractor states?\droppoints
+\end{parts}
+
+\begin{solution}
+a) Recent recording technologies have highlighted how most cognitive functions depend on activity across many brain areas.\\
+b) i. Local circuit in each brain area [1 point] ii. Connect via structural connectivity data [1 point] iii. Allow local circuit parameters to vary based on anatomical data [1 point]\\
+c) i. protrudes from a dendrite (some version of this) [1 point] ii. most common location of excitatory synapses onto excitatory cells [2 point]\\
+d)  i) (1+bSx) before wE,E. [3 points]. Less precise version of this (e.g. missing 1) [1 points].\\
+e) i. longer timescales with increasing spines [1 points] ii. longer integration of information up the hierarchy [1 point] iii. rapid responding in sensory cortex [1 point]\\
+f)  i. The brain areas had different local parameters and connectivity. Those areas that have parameters closer to the bifurcation point (or over it) are more likely to display persistent activity in the large-scale system [2 points] ii. Illustration of bifurcation plot with areas at different points relative to the bifurcation, or a schematic showing increasing recurrent excitation [2 points]\\
+g) i. Attractor states corresponding to working memory for other information, or to other higher cognitive functions [1 points for either] ii. By changing parameters (e.g. through neuromodulators) [1 point] or by changing the external input [1 point] 
+\end{solution}
+
+\end{questions}
+
+\end{document}
